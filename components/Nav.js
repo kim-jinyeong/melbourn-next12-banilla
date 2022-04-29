@@ -15,6 +15,7 @@ import Menu from '@mui/material/Menu';
 import styles from '@/styles/Nav.module.css'
 import MenuItem from '@mui/material/MenuItem';
 import { createSvgIcon } from '@mui/material/utils';
+import { useSelector } from "react-redux"
 
 const HomeIcon = createSvgIcon(
   <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />,
@@ -43,6 +44,10 @@ export function Nav(){
     setAnchorElNav(null);
   };
 
+  const loginUser = useSelector(state => {
+    state
+  })
+
   const handleCloseUserMenu = (value) => {
     switch(value) {
       case '회원가입':  window.location.href='/auth/register' 
@@ -54,6 +59,7 @@ export function Nav(){
     }
     setAnchorElUser(null);
   };
+
 
   
 
